@@ -1,0 +1,16 @@
+._ {
+  height: 500px;
+  width: 100%;
+  background-color: ivory;
+}
+
+.inner {
+  height: 50px;
+
+  :global {
+    svg {
+      height: 50px;
+      width: auto;
+    }
+  }
+}
