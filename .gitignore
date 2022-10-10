@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+built/
+build/
+*.iml
+*.log
+.eslintcache
+tsconfig.tsbuildinfo
+.env

@@ -23,6 +23,10 @@ const routes = [
         path: '/intro',
         component: lazy(() => import('./Intro'))
     },
+    {
+        path: '/dashboard',
+        component: lazy(() => import('./Dashboard'))
+    },
 ]
 
 // 路由处理方式

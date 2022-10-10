@@ -1,0 +1,12 @@
+._ {
+  display: flex;
+  height: 200px;
+  width: 100%;
+ background-color: antiquewhite;
+  justify-content: center;
+
+  > img {
+    height: 100px;
+    width: 100px;
+  }
+}

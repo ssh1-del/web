@@ -20,6 +20,9 @@ export default function Layout() {
                     <li>
                         <Link to="/nothing-here">Nothing Here</Link>
                     </li>
+                    <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
                 </ul>
             </nav>
 

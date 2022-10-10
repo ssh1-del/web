@@ -10,7 +10,7 @@ module.exports = [
     {
         test: /\.(jsx|tsx|ts)?$/,
         use: [
-            {loader: "thread-loader"},
+            {loader: "thread-loader"},  // 开启多线程打包
             {
                 loader: "babel-loader", // 用babel编译时可以在 tsconfig.json 中添加 "noEmit": true, 因为不用ts-loader输出文件了
                 options: {
@@ -27,7 +27,8 @@ module.exports = [
             /\/src\//,
             /\\src\\/,
         ],
-    }, {
+    },
+    {
         test: /\.less/,
         exclude: /\.module\.less$/,
         use: [
@@ -35,7 +36,8 @@ module.exports = [
             'css-loader',
             'less-loader'
         ]
-    }, {
+    },
+    {
         test: /\.module\.scss$/,
         use: [
             {
@@ -55,7 +57,8 @@ module.exports = [
             }
         ],
         include: [path.join(__dirname, '../', 'src')]
-    }, {
+    },
+    {
         test: /\.svg$/,
         // .svg只匹配一次，通过配置oneOf
         oneOf: [
@@ -77,5 +80,14 @@ module.exports = [
                 }
             }
         ]
+    },
+    {
+        test: /\.(png|jpg|gif)$/,  //png|jpg|gif图片资源的打包
+        type: 'asset',
+        generator: {
+            publicPath: '/',
+            filename: 'web/asset/[name][contenthash:8][ext]'
+        },
+        include: [resolve('src')]
     }
 ]
