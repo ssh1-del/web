@@ -1,0 +1,28 @@
+报错: ESLint: TypeError: this.libOptions.parse is not a function - Webstorm
+ESLint: TypeError
+问题描述
+修复办法
+ESLint: TypeError
+ESLint 在 Webstorm 中出现 TypeError: this.libOptions.parse is not a function 错误的原因及修复办法。
+
+问题描述
+如果你正在使用 ESLint 8.23.x 和 WebStorm 2022.2.x 或 PhpStorm 2022.2.x。
+那么你可能会遇到 TypeError: this.libOptions.parse is not a function。
+这是 ESLint 8.23.x 中的一个bug。ESLint 团队正在努力解决这个问题，希望很快就能解决。
+在此之前，解决方法是将你的 ESLint 的版本降至8.22。
+
+修复办法
+执行以下命令安装 ESLint 8.22 版本：
+
+npm install eslint@8.22.0 --save-exact
+1
+或者，你还可以按以下步骤降低版本：
+
+删除 node_modules 目录
+删除 package-json.lock 文件
+修改 package.json 中 ESLint 版本为 8.22.0
+执行命令重新安装 npm install
+如果你喜欢命令的话，你也可以这么做：
+
+# macos
+rm -rf node_modules; rm package-lock.json; npm install
