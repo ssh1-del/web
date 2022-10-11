@@ -1,0 +1,77 @@
+1.配置husky
+1.1 安装husky包
+
+npm install husky --save-dev
+1.2 根目录package.json添加工程命令
+
+"scripts": {
+    "prepare": "husky install"
+},
+1.3 生成.husky文件夹
+
+npm run prepare
+
+
+ 1.4 生成commit-msg规范入口文件(文件夹名字也可以是pre-commit)
+
+npx husky add .husky/commit-msg
+
+
+找到.husky目录生成commit-msg文件, 修改文件内容如下:
+
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+#--no-install 参数表示强制npx使用项目中node_modules目录中的commitlint包
+npx --no-install commitlint --edit $1
+到这一步husky配置好了, 但是规范还没有安装, 所以跑不起来. 规范配置如下.
+
+2. 配置commitlint
+2.1 安装commitlint/cli 和 commitlint/config-conventional包
+
+npm install @commitlint/cli @commitlint/config-conventional --save-dev
+ 2.2 根目录创建commitlint.config.js文件 (建议手动创建, 网上echo命令生成的兼容性有问题, 如文件类型不是utf-8最终commit会报错)
+
+commitlint.config.js内容修改如下:
+
+/**
+* feat：新功能
+* update：更新某功能
+* fix：修补某功能的bug
+* refactor：重构某个功能
+* optimize: 优化构建工具或运行时性能
+* style：仅样式改动
+* docs：仅文档新增/改动
+* chore：构建过程或辅助工具的变动
+*/
+module.exports = {
+    extends: [
+      '@commitlint/config-conventional'
+    ],
+    rules: {
+      'type-enum': [2, 'always', [
+        'feat', 'update', 'fix', 'refactor', 'optimize', 'style', 'docs', 'chore'
+      ]],
+      'type-case': [0],
+      'type-empty': [0],
+      'scope-empty': [0],
+      'scope-case': [0],
+      'subject-full-stop': [0, 'never'],
+      'subject-case': [0, 'never'],
+      'header-max-length': [0, 'always', 72]
+    }
+};
+
+3. 提交代码
+提交格式（注意冒号后面有空格）
+git commit -m <type>[optional scope]: <description>
+
+*type: 改动类型, 如修复了bug就写fix.
+
+*optional scope：一个可选的修改范围。用于标识此次提交主要涉及到代码中哪个模块。
+
+*description：简述代码变更内容
+
+本文配置并提交例子:
+
+git add .

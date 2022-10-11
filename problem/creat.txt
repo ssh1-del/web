@@ -1,0 +1,3 @@
+echo {}> test.js
+touch test.js
+mkdir -p a/b
