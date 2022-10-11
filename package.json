@@ -17,6 +17,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.3",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.5.0",
     "ip": "^1.1.8",
@@ -43,6 +44,7 @@
     "@typescript-eslint/parser": "^5.39.0",
     "eslint": "8.22.0",
     "eslint-plugin-react": "^7.31.9",
+    "prettier": "^2.7.1",
     "webpack-cli": "^4.10.0"
   }
 }

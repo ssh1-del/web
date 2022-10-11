@@ -1,58 +1,57 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "esNext",
-        "lib": ["es7", "dom", "es2017.object"],
-        "allowJs": true,
-        "sourceMap": true,
-        "outDir": "build",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esNext",
+    "lib": ["es7", "dom", "es2017.object"],
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "build",
 
-        // 类型检查选项
-        // "strict": true, 开启true，则下面 4 个全部开启
-        "noImplicitAny": false,
-        "strictNullChecks": false,
-        "strictPropertyInitialization":false,
-        "strictBindCallApply":false,
-        "alwaysStrict":false,
+    // 类型检查选项
+    // "strict": true, 开启true，则下面 4 个全部开启
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "strictBindCallApply": false,
+    "alwaysStrict": false,
 
-        // 额外检测选项
-        "noUnusedLocals": false, // 变量声明未使用
-        "noUnusedParameters":false,// 参数声明
-        "noImplicitReturns": false,// 函数的有返回路径没有返回值
-        "noImplicitThis": false, // this 为 any 的时候
-        "noEmit": true,
-        // 模块解析选项
-        "baseUrl": "src", // 基准目录
-        "paths": {
-            "svg/*": ["/svg/*"]
-        },
-
-        // Source Map 选项
-        "inlineSources": false,
-        "inlineSourceMap": false,
-
-        "importHelpers": true,// 引入 tslib 的辅助工具
-        "skipLibCheck": true,
-        "jsx": "react",
-        "moduleResolution": "node",
-        "experimentalDecorators": true, // 启用实验性的ES装饰器
-        "allowSyntheticDefaultImports": true, // 用来指定允许从没有默认导出的模块中默认导入
-        "forceConsistentCasingInFileNames": true,
-        "suppressImplicitAnyIndexErrors": false,
-        "downlevelIteration": true, // 当target为'ES5' or 'ES3'时，为'for-of', spread, and destructuring'中的迭代器提供完全支持
-        "preserveConstEnums": true,
-        "esModuleInterop": true,
-        "useDefineForClassFields": true
-
+    // 额外检测选项
+    "noUnusedLocals": false, // 变量声明未使用
+    "noUnusedParameters": false, // 参数声明
+    "noImplicitReturns": false, // 函数的有返回路径没有返回值
+    "noImplicitThis": false, // this 为 any 的时候
+    "noEmit": true,
+    // 模块解析选项
+    "baseUrl": "src", // 基准目录
+    "paths": {
+      "svg/*": ["/svg/*"]
     },
-    "include": ["./src/**/*", "types"],
-    "exclude": [
-        "node_modules",
-        "**/node_modules/**/*",
-        "src/simple-react/**/*",
-        "**/__test__/*",
-        "lib",
-        "dist",
-        "build"
-    ]
+
+    // Source Map 选项
+    "inlineSources": false,
+    "inlineSourceMap": false,
+
+    "importHelpers": true, // 引入 tslib 的辅助工具
+    "skipLibCheck": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "allowSyntheticDefaultImports": true, // 用来指定允许从没有默认导出的模块中默认导入
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "downlevelIteration": true, // 当target为'ES5' or 'ES3'时，为'for-of', spread, and destructuring'中的迭代器提供完全支持
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true
+  },
+  "include": ["./src/**/*", "types"],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/**/*",
+    "src/simple-react/**/*",
+    "**/__test__/*",
+    "lib",
+    "dist",
+    "build"
+  ]
 }
