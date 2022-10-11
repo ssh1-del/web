@@ -8,7 +8,7 @@ const headers = {
 };
 
 // 以方法写的优势可以传一些参数
-module.exports = (env) => {
+module.exports = () => {
   const proxyUrl = process.env.PROXY;
   console.log(proxyUrl);
   const proxy = {
@@ -25,5 +25,6 @@ module.exports = (env) => {
     https: false,
     hot: true,
     headers,
+    proxy
   };
 };
