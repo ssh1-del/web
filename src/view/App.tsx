@@ -1,10 +1,12 @@
-import React, {useId} from "react";
-import {add, subtraction} from "../utils";
+import React from "react";
+import {add} from "../utils";
+import './App.scss';
+
 
 export default function App() {
-    const num = add(1, 2);
-    const sub = subtraction(5, 1);
-    const id = useId();
-    const b = "sss";
-    console.log(b);
+    const num = add(1,2);
+    console.log(num);
+    return <div className="warp">
+        test
+    </div>;
 }

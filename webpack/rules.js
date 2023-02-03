@@ -83,7 +83,13 @@ module.exports = [
         oneOf: [
             {
                 issuer: /\.[jt]sx?$/,
-                loader: "react-svg-loader",
+                // type: 'asset/source',
+                // loader: 'react-svg-loader'
+                loader:'@svgr/webpack' // 支持svg使用组件的形式
+                // generator: {
+                //     publicPath: '/',
+                //     filename:'web/svg/[name].[hash:6].[ext]'
+                // }
             },
             {
                 issuer: /\.(s?css|less)$/,
@@ -110,3 +116,11 @@ module.exports = [
         include: [resolve("src")],
     },
 ];
+
+ //webpack5新特性 资源模块（asset module）是一种模块类型。它允许在使用资源（字体，图标等）的时候无须使用loader
+// rule.type
+// asset => raw-loader  在导出data url和生成资源文件之间进行选择
+// asset/resource => file-loader  生成资源文件并导出data url
+// asset/source => raw-loader 生成资源文件
+// asset/inline=> url-loader  导出data url
+// data url是一种处理svg，png的一种方式，将图片转化为base64编码的形式，并存储在url中

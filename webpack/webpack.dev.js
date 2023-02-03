@@ -1,4 +1,3 @@
-const path = require("path");
 const dotenv = require("dotenv");
 
 module.exports = () => {
@@ -7,16 +6,16 @@ module.exports = () => {
   return {
     mode: "development",
     entry: "./src/index.tsx",
-    output: require("./config/output"),
+    output: require("./output"),
     module: {
-      rules: require("./config/rules"),
+      rules: require("./rules"),
     },
-    plugins: require("./config/plugins")(),
+    plugins: require("./plugins")(),
     optimization: {
       runtimeChunk: "single",
     },
-    devServer: require("./config/devServer")(env),
-    resolve: require("./config/resolve"),
+    devServer: require("./devServer")(),
+    resolve: require("./resolve"),
     devtool: "cheap-source-map",
   };
 };
