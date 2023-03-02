@@ -3,12 +3,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const DeadCodePlugin = require("webpack-deadcode-plugin");
 const EslintWebpackPlugin = require("eslint-webpack-plugin");
 const TsCheckerWebpackPlgun = require("fork-ts-checker-webpack-plugin");
-// const webpack = require("webpack");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 const path = require("path");
 
 const env = process.env.NODE_ENV;
+console.log( path.join(__dirname, "../", "node_modules"));
+console.log(path.resolve(__dirname,"../src"));
 
 module.exports = () => {
     let plugin = [
@@ -29,7 +29,9 @@ module.exports = () => {
         }),
         // eslint检测
         new EslintWebpackPlugin({
+            context:path.resolve(__dirname,"../src"),
             // 指定需要扩展的名称
+            cache:true, // 进行缓存
             extensions: ['.ts', '.tsx', '.jsx', '.js', '.json']
         }),
         // typeScript检测

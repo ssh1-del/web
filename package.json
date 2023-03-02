@@ -19,6 +19,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@svgr/webpack": "^6.5.1",
+    "antd": "5.2.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.3",

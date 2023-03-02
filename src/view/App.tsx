@@ -1,12 +1,12 @@
-import React from "react";
-import {add} from "../utils";
-import './App.scss';
+import React from 'react';
+import {BrowserRouter, Routes, useRoutes} from "react-router-dom";
+import routes from "./routes";
 
-
-export default function App() {
-    const num = add(1,2);
-    console.log(num);
-    return <div className="warp">
-        test
-    </div>;
+export default function () {
+    const element = useRoutes(routes);
+    return <BrowserRouter>
+        <Routes>
+            {element}
+        </Routes>
+    </BrowserRouter>;
 }

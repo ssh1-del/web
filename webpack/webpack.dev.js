@@ -11,9 +11,9 @@ module.exports = () => {
       rules: require("./rules"),
     },
     plugins: require("./plugins")(),
-    optimization: {
-      runtimeChunk: "single",
-    },
+    // optimization: {
+    //   runtimeChunk: "single",
+    // },
     devServer: require("./devServer")(),
     resolve: require("./resolve"),
     devtool: "cheap-source-map",
